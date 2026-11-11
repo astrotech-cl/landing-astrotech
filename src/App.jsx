@@ -465,8 +465,7 @@ export default function App() {
     </>
   );
 }
-import { useState } from 'react';
-import { Mail, Copy, Check } from 'lucide-react'; // Si ya usas lucide-react
+import { Mail, Copy, Check } from 'lucide-react';
 
 export function ContactoEmail() {
   const [copiado, setCopiado] = useState(false);
