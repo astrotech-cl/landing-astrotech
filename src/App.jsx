@@ -465,3 +465,48 @@ export default function App() {
     </>
   );
 }
+import { useState } from 'react';
+import { Mail, Copy, Check } from 'lucide-react'; // Si ya usas lucide-react
+
+export function ContactoEmail() {
+  const [copiado, setCopiado] = useState(false);
+  const email = "contacto@astrotech.cl";
+
+  const copiarCorreo = () => {
+    navigator.clipboard.writeText(email);
+    setCopiado(true);
+    setTimeout(() => setCopiado(false), 2500);
+  };
+
+  return (
+    <div className="flex flex-wrap items-center gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+      <div className="flex items-center gap-2.5 text-slate-200">
+        <Mail className="w-5 h-5 text-cyan-400" />
+        <a 
+          href={`mailto:${email}?subject=Consulta%20-%20Astro%20Tech`}
+          className="font-medium hover:text-cyan-400 transition-colors"
+        >
+          {email}
+        </a>
+      </div>
+
+      <button
+        onClick={copiarCorreo}
+        type="button"
+        className="ml-auto inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-all cursor-pointer"
+      >
+        {copiado ? (
+          <>
+            <Check className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="text-emerald-400">¡Copiado!</span>
+          </>
+        ) : (
+          <>
+            <Copy className="w-3.5 h-3.5" />
+            <span>Copiar</span>
+          </>
+        )}
+      </button>
+    </div>
+  );
+}
