@@ -415,7 +415,7 @@ const ContactFooter = () => {
               ¿Listo para potenciar tu equipo?
             </h3>
             <p className="text-[#C5D3E0]">
-              Atención presencial en Quilpué y soporte remoto avanzado.
+              Atención presencial en la V Region y soporte remoto avanzado.
             </p>
           </div>
 
