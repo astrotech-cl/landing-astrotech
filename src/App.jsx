@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  ShieldCheck, 
-  Cpu, 
-  Zap, 
-  Monitor, 
-  Database, 
-  RefreshCcw, 
-  TerminalSquare, 
-  ChevronRight, 
+import {
+  ShieldCheck,
+  Cpu,
+  Zap,
+  Monitor,
+  Database,
+  RefreshCcw,
+  TerminalSquare,
+  ChevronRight,
   AlertTriangle,
   CheckCircle2,
   Phone
@@ -67,16 +67,16 @@ const Header = () => {
             </p>
           </div>
         </div>
-        
+
         <nav className="hidden md:flex gap-8 text-[15px] font-medium text-[#C5D3E0]">
           <a href="#servicios" className="hover:text-[#D4A96A] transition-colors">Servicios</a>
           <a href="#simulador" className="hover:text-[#D4A96A] transition-colors">Simulador</a>
           <a href="#contacto" className="hover:text-[#D4A96A] transition-colors">Contacto</a>
         </nav>
-        
-        <a 
-          href="https://wa.me/56936954085" 
-          target="_blank" 
+
+        <a
+          href="https://wa.me/56936954085"
+          target="_blank"
           rel="noreferrer"
           className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-[#D4A96A] text-[#0B1F33] font-bold rounded-full overflow-hidden transition-transform hover:scale-105"
         >
@@ -100,25 +100,25 @@ const Hero = () => {
     <section className="relative overflow-hidden pt-24 pb-32">
       {/* Background Grid Effect */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E3A56_1px,transparent_1px),linear-gradient(to_bottom,#1E3A56_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16 relative z-10">
         <div className="flex-1 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E3A56]/50 border border-[#2EC4D6]/30 text-[#2EC4D6] text-sm font-mono mb-6 shadow-[0_0_10px_rgba(46,196,214,0.2)]">
             <span className="w-2 h-2 rounded-full bg-[#2EC4D6] animate-pulse"></span>
             Operando desde Quilpué
           </div>
-          
+
           <h2 className="font-['Space_Grotesk'] text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-[#F2F6FA]">
-            Revive y potencia <br/>
+            Revive y potencia <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4A96A] to-[#f0c37f]">
               tu PC desde casa
             </span>
           </h2>
-          
+
           <p className="text-lg lg:text-xl text-[#C5D3E0] max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
             Soporte técnico experto con enfoque en ciberseguridad. Diagnóstico, reparación, armado y securización para que trabajes y juegues sin interrupciones.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a href="#servicios" className="px-8 py-4 bg-[#2EC4D6] text-[#0B1F33] font-bold rounded-lg hover:bg-[#25a8b8] transition-colors shadow-[0_0_20px_rgba(46,196,214,0.4)]">
               Explorar Servicios
@@ -209,8 +209,8 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((svc, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`group bg-[#0B1F33] p-8 rounded-2xl border border-[#1E3A56] transition-all duration-300 hover:scale-[1.02] hover:bg-[#102B45] ${svc.color} hover:shadow-xl`}
             >
               <div className="w-14 h-14 rounded-xl bg-[#1E3A56]/50 flex items-center justify-center text-[#2EC4D6] mb-6 group-hover:text-[#D4A96A] transition-colors">
@@ -284,20 +284,20 @@ const DiagnosticSimulator = () => {
   return (
     <section id="simulador" className="py-24 bg-[#0B1F33] relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#2EC4D6]/50 to-transparent"></div>
-      
+
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          
+
           {/* Info Side */}
           <div className="flex-1 text-center lg:text-left">
             <h2 className="font-['Space_Grotesk'] text-4xl font-bold text-[#F2F6FA] mb-6">
-              Simulador de <br/><span className="text-[#D4A96A]">Auditoría Técnica</span>
+              Simulador de <br /><span className="text-[#D4A96A]">Auditoría Técnica</span>
             </h2>
             <p className="text-[#C5D3E0] text-lg mb-8">
               Descubre cómo trabajamos. Nuestro escáner interactivo simula el análisis profundo que realizamos para detectar cuellos de botella y vulnerabilidades en tu red y hardware.
             </p>
             {status === 'idle' && (
-              <button 
+              <button
                 onClick={runSimulation}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#2EC4D6] text-[#0B1F33] font-bold rounded-lg hover:bg-[#25a8b8] transition-all hover:shadow-[0_0_20px_rgba(46,196,214,0.4)]"
               >
@@ -312,7 +312,7 @@ const DiagnosticSimulator = () => {
               </div>
             )}
             {status === 'complete' && (
-              <a 
+              <a
                 href="https://wa.me/56936954085"
                 target="_blank"
                 rel="noreferrer"
@@ -336,21 +336,21 @@ const DiagnosticSimulator = () => {
                 </div>
                 <div className="text-xs font-mono text-[#8b9fb3]">astro_diagnostic_tool_v2.1</div>
               </div>
-              
+
               {/* Terminal Body */}
               <div className="p-4 font-mono text-sm overflow-y-auto flex-1 custom-scrollbar">
                 <div className="text-[#8b9fb3] mb-4">
-                  AstroTech Security Framework [Version 2.1.8]<br/>
+                  AstroTech Security Framework [Version 2.1.8]<br />
                   (c) Astro Tech. Todos los derechos reservados.
                 </div>
-                
+
                 {logs.map((log, index) => (
                   <div key={index} className="mb-2 flex items-start">
                     <span className="text-[#8b9fb3] mr-2">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
                     <span className={
                       log.type === 'warning' ? 'text-yellow-400' :
-                      log.type === 'success' ? 'text-green-400' :
-                      'text-[#2EC4D6]'
+                        log.type === 'success' ? 'text-green-400' :
+                          'text-[#2EC4D6]'
                     }>
                       {log.type === 'warning' && <AlertTriangle className="inline w-3 h-3 mr-2 mb-0.5" />}
                       {log.type === 'success' && <CheckCircle2 className="inline w-3 h-3 mr-2 mb-0.5" />}
@@ -358,13 +358,13 @@ const DiagnosticSimulator = () => {
                     </span>
                   </div>
                 ))}
-                
+
                 {status === 'scanning' && (
                   <div className="flex items-center text-[#F2F6FA] mt-2">
                     <span className="w-2 h-5 bg-[#2EC4D6] animate-pulse"></span>
                   </div>
                 )}
-                
+
                 {status === 'complete' && (
                   <div className="mt-6 border border-yellow-500/30 bg-yellow-500/10 p-4 rounded text-yellow-400">
                     <p className="font-bold mb-2">⚠️ REPORTE DE DIAGNÓSTICO:</p>
@@ -379,7 +379,7 @@ const DiagnosticSimulator = () => {
                 )}
                 <div ref={logsEndRef} />
               </div>
-              
+
               {/* Terminal Footer (Progress Bar) */}
               <div className="px-4 py-2 border-t border-[#1E3A56] bg-[#0a1526] rounded-b-xl">
                 <div className="flex justify-between text-xs font-mono text-[#8b9fb3] mb-1">
@@ -387,7 +387,7 @@ const DiagnosticSimulator = () => {
                   <span>{progress}%</span>
                 </div>
                 <div className="w-full h-2 bg-[#1E3A56] rounded-full overflow-hidden">
-                  <div 
+                  <div
                     className="h-full bg-gradient-to-r from-[#2EC4D6] to-[#D4A96A] transition-all duration-300 ease-out"
                     style={{ width: `${progress}%` }}
                   ></div>
@@ -395,7 +395,7 @@ const DiagnosticSimulator = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>
@@ -409,7 +409,7 @@ const ContactFooter = () => {
         <div className="bg-[#102B45] rounded-3xl p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between border border-[#1E3A56] shadow-2xl relative overflow-hidden">
           {/* Deco */}
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#2EC4D6] rounded-full blur-[100px] opacity-10"></div>
-          
+
           <div className="mb-8 md:mb-0 relative z-10 text-center md:text-left">
             <h3 className="font-['Space_Grotesk'] text-3xl font-bold text-[#F2F6FA] mb-2">
               ¿Listo para potenciar tu equipo?
@@ -418,20 +418,20 @@ const ContactFooter = () => {
               Atención presencial en Quilpué y soporte remoto avanzado.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 relative z-10">
-            <a 
-              href="https://wa.me/56936954085" 
-              target="_blank" 
+            <a
+              href="https://wa.me/56936954085"
+              target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-colors shadow-lg shadow-green-500/20"
             >
               <Phone className="w-5 h-5" />
               WhatsApp: +56 9 3695 4085
             </a>
-            <a 
-              href="https://instagram.com/AstroTechCL" 
-              target="_blank" 
+            <a
+              href="https://instagram.com/AstroTechCL"
+              target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1E3A56] text-[#F2F6FA] font-bold rounded-lg hover:bg-[#2a4d70] transition-colors border border-[#3A5878]"
             >
@@ -439,11 +439,14 @@ const ContactFooter = () => {
             </a>
           </div>
         </div>
-        
+
         <div className="mt-12 text-center text-[#8b9fb3] text-sm flex flex-col items-center gap-2">
           <TerminalSquare className="w-6 h-6 opacity-50" />
           <p>© {new Date().getFullYear()} Astro Tech. Soluciones Informáticas.</p>
           <p className="text-xs opacity-50">Desarrollado para la máxima eficiencia y seguridad.</p>
+        </div>
+        <div className="mt-4">
+          <ContactoEmail />
         </div>
       </div>
     </footer>
@@ -481,7 +484,7 @@ export function ContactoEmail() {
     <div className="flex flex-wrap items-center gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
       <div className="flex items-center gap-2.5 text-slate-200">
         <Mail className="w-5 h-5 text-cyan-400" />
-        <a 
+        <a
           href={`mailto:${email}?subject=Consulta%20-%20Astro%20Tech`}
           className="font-medium hover:text-cyan-400 transition-colors"
         >
